@@ -1,0 +1,1722 @@
+{
+    "swagger": "2.0",
+    "securityDefinitions": {
+        "Bearer": {
+          "type": "apiKey",
+          "name": "Authorization",
+          "in": "header",
+          "description": "Enter your bearer token in the format **Bearer <token>**"
+        }
+      },
+      "security": [{ "Bearer": [] }],
+    "info": {
+        "title": "Agri-Sales-API",
+        "description": "API documentation for Agri-Sales",
+        "version": "1.0.0"
+    },
+    "host": "localhost:3001",
+    "basePath": "",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/api/agri-sales/agro/signUp": {
+            "post": {
+                "summary": "Create an account",
+                "description": "To find more first sign Up",
+                "tags": [
+                    "Agronomist Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signUp object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user created"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/agro/signIn": {
+            "post": {
+                "summary": "Login into your account",
+                "description": "first login",
+                "tags": [
+                    "Agronomist Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signIn object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user logged in"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/agro/verify": {
+            "post": {
+                "summary": "verify your otp",
+                "description": "verify your account",
+                "tags": [
+                    "Agronomist Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account verified"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/agro/forgotPassword": {
+            "post": {
+                "summary": "incase you forgot your password",
+                "description": "if you forgot your password",
+                "tags": [
+                    "Agronomist Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "forgotPassword object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account click on forgotPassword"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/agro/resetPassword": {
+            "post": {
+                "summary": "reset your password",
+                "description": "set another password incase you forgot your password",
+                "tags": [
+                    "Agronomist Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account reset"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/agro/delete/{id}": {
+            "delete": {
+                "summary": "Delete a user by ID",
+                "description": "Delete a user by ID",
+                "tags": [
+                    "Agronomist Auth"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the user to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "user deleted"
+                    },
+                    "404": {
+                        "description": "user not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/buyer/signUp": {
+            "post": {
+                "summary": "Create an account",
+                "description": "To find more first sign Up",
+                "tags": [
+                    "Buyer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signUp object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user created"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/buyer/signIn": {
+            "post": {
+                "summary": "Login into your account",
+                "description": "first login",
+                "tags": [
+                    "Buyer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signIn object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user logged in"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/buyer/verify": {
+            "post": {
+                "summary": "verify your otp",
+                "description": "verify your account",
+                "tags": [
+                    "Buyer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account verified"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/buyer/forgotPassword": {
+            "post": {
+                "summary": "incase you forgot your password",
+                "description": "if you forgot your password",
+                "tags": [
+                    "Buyer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "forgotPassword object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account click on forgotPassword"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/buyer/resetPassword": {
+            "post": {
+                "summary": "reset your password",
+                "description": "set another password incase you forgot your password",
+                "tags": [
+                    "Buyer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account reset"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/buyer/delete/{id}": {
+            "delete": {
+                "summary": "Delete a user by ID",
+                "description": "Delete a user by ID",
+                "tags": [
+                    "Buyer Auth"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the user to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "user deleted"
+                    },
+                    "404": {
+                        "description": "user not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/farmer/signUp": {
+            "post": {
+                "summary": "Create an account",
+                "description": "To find more first sign Up",
+                "tags": [
+                    "Farmer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signUp object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user created"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/farmer/signIn": {
+            "post": {
+                "summary": "Login into your account",
+                "description": "first login",
+                "tags": [
+                    "Farmer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signIn object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user logged in"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/farmer/verify": {
+            "post": {
+                "summary": "verify your otp",
+                "description": "verify your account",
+                "tags": [
+                    "Farmer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account verified"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/farmer/forgotPassword": {
+            "post": {
+                "summary": "incase you forgot your password",
+                "description": "if you forgot your password",
+                "tags": [
+                    "Farmer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "forgotPassword object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account click on forgotPassword"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/farmer/resetPassword": {
+            "post": {
+                "summary": "reset your password",
+                "description": "set another password incase you forgot your password",
+                "tags": [
+                    "Farmer Auth"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account reset"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/farmer/delete/{id}": {
+            "delete": {
+                "summary": "Delete a user by ID",
+                "description": "Delete a user by ID",
+                "tags": [
+                    "Farmer Auth"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the user to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "user deleted"
+                    },
+                    "404": {
+                        "description": "user not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/users/signUp": {
+            "post": {
+                "summary": "Create an account",
+                "description": "To find more first sign Up",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signUp object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user created"
+                    }
+                },
+                "security": [{ "Bearer": [] }]
+            }
+        },
+        "/api/agri-sales/users/signIn": {
+            "post": {
+                "summary": "Login into your account",
+                "description": "first login",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "signIn object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": " user logged in"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/users/verify": {
+            "post": {
+                "summary": "verify your otp",
+                "description": "verify your account",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account verified"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/users/forgotPassword": {
+            "post": {
+                "summary": "incase you forgot your password",
+                "description": "if you forgot your password",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "forgotPassword object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account click on forgotPassword"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/users/resetPassword": {
+            "post": {
+                "summary": "reset your password",
+                "description": "set another password incase you forgot your password",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "verify object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Account reset"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/users/delete/{id}": {
+            "delete": {
+                "summary": "Delete a user by ID",
+                "description": "Delete a user by ID",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the user to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "user deleted"
+                    },
+                    "404": {
+                        "description": "user not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/disease/addDisease": {
+            "post": {
+                "summary": "Create a new Disease",
+                "description": "add a disease",
+                "tags": [
+                    "Disease"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "DiseaseName",
+                       "type":"string",
+                        "required": true,
+                        "description": "Disease object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Description",
+                       "type":"string",
+                        "required": true,
+                        "description": "Disease object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Solution",
+                       "type":"string",
+                        "required": true,
+                        "description": "Disease object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Image",
+                       "type":"file",
+                        "required": true,
+                        "description": "Disease object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "AgronomistId",
+                       "type":"mongoose.Schema.Types.ObjectId",
+                        "required": false,
+                        "description": "Disease object"
+                    }
+
+                ],
+                "responses": {
+                    "201": {
+                        "description": " Disease created"
+                    },
+                    "401":{
+                        "description":"Bad request -Validation error"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/disease/list": {
+            "get": {
+                "summary": "Find all diseases",
+                "description": "Find all diseases",
+                "tags": [
+                    "Disease"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "Disease not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/disease/findById/{id}": {
+            "get": {
+                "summary": "get a disease by ID",
+                "description": "get a single disease by ID",
+                "tags": [
+                    "Disease"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the disease to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "single disease got it!"
+                    },
+                    "404": {
+                        "description": "disease not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/disease/update/{id}": {
+            "put": {
+                "summary": "update Disease",
+                "description": "updating the diseases",
+                "tags": [
+                    "Disease"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the disease to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "Updated disease object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "disease not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/disease/delete/{id}": {
+            "delete": {
+                "summary": "Delete a disease by ID",
+                "description": "Delete a disease by ID",
+                "tags": [
+                    "Disease"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the disease to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Disease deleted"
+                    },
+                    "404": {
+                        "description": "Disease not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/addProduct": {
+            "post": {
+                "summary": "Create a new Product",
+                "description": "add a Product",
+                "tags": [
+                    "Product"
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                  ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "farmerId",
+                       "type":"string",
+                        "required": true,
+                        "description": "Product object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "productName",
+                       "type":"string",
+                        "required": true,
+                        "description": "Product object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "description",
+                       "type":"string",
+                        "required": true,
+                        "description": "Product object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "image",
+                       "type":"file",
+                       "description": "Product object",
+                        "public_id": {
+                          "type": "String"
+                        },
+                        "asset_id":{
+                          "type": "String"
+                        },
+                        "url":{
+                          "type": "String"
+                        }
+                      },
+                    {
+                        "in": "formData",
+                        "name": "price",
+                       "type":"number",
+                        "required": true,
+                        "description": "Product object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "productInStock",
+                       "type":"number",
+                        "required": true,
+                        "description": "Product object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "category",
+                       "type":"string",
+                        "required": true,
+                        "description": "Product object"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "updatedAt",
+                       "type":"string",
+                       "format": "date-time",
+                        "required": true,
+                        "default": "2024-05-30T12:34:56.789Z",
+                        "description": "Product object"
+                    }
+
+                ],
+                "responses": {
+                    "201": {
+                        "description": " Product created"
+                    },
+                    "401":{
+                        "description":"Bad request -Validation error"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/productList": {
+            "get": {
+                "summary": "Find all products",
+                "description": "Find all products",
+                "tags": [
+                    "Product"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "product not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/productById/{id}": {
+            "get": {
+                "summary": "Find product by ID",
+                "description": "Find products by ID",
+                "tags": [
+                    "Product"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "product not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/updateProduct/{id}": {
+            "put": {
+                "summary": "update a product",
+                "description": "updating the products",
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the product to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "Updated product object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "product not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/category/{category}": {
+            "get": {
+                "summary": "get a product by category",
+                "description": "get a single category by category",
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "category of the product to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "single category got it!"
+                    },
+                    "404": {
+                        "description": "category not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/productById/{id}": {
+            "get": {
+                "summary": "get a product by id",
+                "description": "get a single id by id",
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the product to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "single id got it!"
+                    },
+                    "404": {
+                        "description": "id not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/productCount": {
+            "get": {
+                "summary": "get a productCount",
+                "description": "get a single productCount",
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "productCount of the product to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "productCount got it!"
+                    },
+                    "404": {
+                        "description": "productCount not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/products/deleteProduct/{id}": {
+            "delete": {
+                "summary": "Delete a product by ID",
+                "description": "Delete a product by ID",
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the product to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Product deleted"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/orders/CreateOrder": {
+            "post": {
+                "summary": "Create a new order",
+                "description": "Create an order",
+                "tags": [
+                    "Order"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "order object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "order created"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/orders/listOrder": {
+            "get": {
+                "summary": "Find all orders",
+                "description": "Find all orders",
+                "tags": [
+                    "Order"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "order not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/orders/getOrder/{id}": {
+            "get": {
+                "summary": "Find an order by ID",
+                "description": "Find an order by ID",
+                "tags": [
+                    "Order"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "order not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/orders/getTotalProductOrders": {
+            "get": {
+                "summary": "Find total product orders",
+                "description": "Find total product orders",
+                "tags": [
+                    "Order"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "order not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/orders/getOrderCount": {
+            "get": {
+                "summary": "Find order Count",
+                "description": "Find order count",
+                "tags": [
+                    "Order"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "order not found"
+                    }
+                }
+            }
+        },
+       
+        "/api/agri-sales/orders/updateOrder/{id}": {
+            "put": {
+                "summary": "update an order",
+                "description": "updating an order",
+                "tags": [
+                    "Order"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the order to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "Updated order object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "order not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/orders/deleteOrder/{id}": {
+            "delete": {
+                "summary": "Delete an order by ID",
+                "description": "Delete an order by ID",
+                "tags": [
+                    "Order"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the order to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Order deleted"
+                    },
+                    "404": {
+                        "description": "Order not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/carts/addToCart": {
+            "post": {
+                "summary": "Create a new cart",
+                "description": "Create a new cart",
+                "tags": [
+                    "Cart"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "cart object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "cart created"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/carts/getCart/{id}": {
+            "get": {
+                "summary": "Find cart",
+                "description": "Find cart you want",
+                "tags": [
+                    "Cart"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "cart not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/carts/update/{id}": {
+            "put": {
+                "summary": "update a cart",
+                "description": "updating the carts",
+                "tags": [
+                    "Cart"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the cart to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
+                        },
+                        "required": true,
+                        "description": "Updated cart object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "cart not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/carts/removeCart": {
+            "delete": {
+                "summary": "Delete a cart",
+                "description": "Delete cart",
+                "tags": [
+                    "Cart"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "cart to be deleted",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "cart removed"
+                    },
+                    "404": {
+                        "description": "cart not found"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/carts/remove/{id}": {
+            "delete": {
+                "summary": "Delete a cart by ID",
+                "description": "Delete cart by ID",
+                "tags": [
+                    "Cart"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "cart to be deleted by ID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "cart removed"
+                    },
+                    "404": {
+                        "description": "cart not found"
+                    }
+                }
+            }
+        }
+    },
+        
+  "definitions": {
+    "components": {
+        "securitySchemes": {
+          "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+          }
+        },
+        "schemas": {
+          "User": {
+            "firstName": {
+                "type": "String",
+                "required": true
+            },
+            "lastName": {
+                "type": "String",
+                "required": true
+            },
+            "email": {
+                "type": "String",
+                "required": true,
+                "unique": true
+            },
+            "role": {
+                "type": "String",
+                "required": true
+            },
+            "password": {
+                "type": "String",
+                "required": true
+            },
+            "otp": {
+                "type": "Number",
+                "required": true
+            },
+            "otpExpires": {
+                "type": "Date",
+                "required": false
+            },
+            "verified": {
+                "type": "Boolean",
+                "required": true,
+                "default": false
+            }
+            },
+            "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "password",
+                "otp",
+                "otpExpires",
+                "verified"
+            ]
+        },
+        "Farmer": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "String",
+                    "required": true
+                },
+                "lastName": {
+                    "type": "String",
+                    "required": true
+                },
+                "email": {
+                    "type": "String",
+                    "required": true,
+                    "unique": true
+                },
+                "role": {
+                    "type": "String",
+                    "required": true
+                },
+                "password": {
+                    "type": "String",
+                    "required": true
+                },
+                "otp": {
+                    "type": "Number",
+                    "required": true
+                },
+                "otpExpires": {
+                    "type": "Date",
+                    "required": false
+                },
+                "verified": {
+                    "type": "Boolean",
+                    "required": true,
+                  
+                    "default": false
+                }
+            },
+            "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "password",
+                "otp",
+                "otpExpires",
+                "verified"
+            ]
+        },
+        "Buyer": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "String",
+                    "required": true
+                },
+                "lastName": {
+                    "type": "String",
+                    "required": true
+                },
+                "email": {
+                    "type": "String",
+                    "required": true,
+                    "unique": true
+                },
+                "role": {
+                    "type": "String",
+                    "required": true
+                },
+                "password": {
+                    "type": "String",
+                    "required": true
+                },
+                "otp": {
+                    "type": "Number",
+                    "required": true
+                },
+                "otpExpires": {
+                    "type": "Date",
+                    "required": false
+                },
+                "verified": {
+                    "type": "Boolean",
+                    "required": true,
+                  
+                    "default": false
+                }
+            },
+            "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "password",
+                "otp",
+                "otpExpires",
+                "verified"
+            ]
+        },
+        "Users": {
+            "type": "object",
+            "properties": {
+                "fullNames": {
+                    "type": "String",
+                    "required": true
+                },
+                "Email": {
+                    "type": "String",
+                    "required": true
+                },
+                "Role": {
+                    "type": "String",
+                    "required": true
+                },
+                "contact": {
+                    "type": "String",
+                    "required": true
+                },
+                "address": {
+                    "type": "String",
+                    "required": true
+            
+                }
+            },
+                "required": [
+                    "fullNames",
+                    "Email",
+                    "Role",
+                    "contact",
+                    "address"
+                ]
+            },
+        "Disease": {
+            "type": "object",
+            "properties": {
+                "DiseaseName":{
+                    "type": "String",
+                    "required": true
+                },
+                "Description":{
+                    "type": "String",
+                    "required": true
+                },
+                "Solution":{
+                    "type": "String",
+                    "required": true
+                },
+                "Image": {
+                    "public_id": {
+                      "type": "String"
+                    },
+                    "asset_id":{
+                      "type": "String"
+                    },
+                    "url":{
+                      "type": "String"
+                    }
+                  },
+                "AgronomistId":{
+                    "type": "mongoose.Schema.Types.ObjectId",
+                    "ref": "User",
+                    "required": false
+                }
+            },
+                "required": [
+                    "DiseaseName",
+                    "Description",
+                    "Solution",
+                    "Image",
+                    "AgronomistId"
+                ]
+            },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "farmerId": {
+                    "type": "mongoose.Schema.Types.ObjectId",
+                    "ref": "User",
+                    "required": false
+                  },
+                  "productName": {
+                    "type": "String",
+                    "required": true
+                  },
+                  "description": {
+                    "type": "String",
+                    "required": true
+                  },
+                  "price": {
+                    "type": "Number",
+                    "required": true
+                  },
+                  "productInStock":{
+                    "type":"Number",
+                    "required":true
+                },
+                  "category":{
+                    "type": "String",
+                    "required":false,
+                    "enums":"['Vegetables,Fruits']"
+                  },
+                  "image": {
+                    "public_id": {
+                      "type": "String"
+                    },
+                    "asset_id":{
+                      "type": "String"
+                    },
+                    "url":{
+                      "type": "String"
+                    }
+                  },
+                  "updatedAt": {
+                    "type": "Date",
+                    "default": "Date.now"
+                  }
+                },
+                "required": [
+                    "farmerId",
+                    "productName",
+                    "description",
+                    "price",
+                    "productInStock",
+                    "category",
+                    "image"
+                ]
+            },
+        "Cart": {
+            "type": "object",
+            "properties": {
+                "buyerId": {
+                    "type": "mongoose.Schema.Types.ObjectId",
+                    "ref": "User",
+                    "required": false
+                  },
+                  "productId": {
+                    "type": "mongoose.Schema.Types.ObjectId",
+                    "ref": "Product",
+                    "required": true
+                  },
+                  "quantity": {
+                    "type": "Number",
+                    "required": true,
+                    "default":0
+                  },
+                  "totalPrice": {
+                    "type": "Number",
+                    "required": true
+                  },
+                 
+                  "createdAt": {
+                    "type": "Date",
+                    "default": "Date.now"
+                  }
+                },
+                "required": [
+                    "buyerId",
+                    "productId",
+                    "quantity",
+                    "totalPrice",
+                    "createdAt"
+                ]
+            },
+        "Order": {
+            "type": "object",
+            "properties": {
+                "buyerId": { 
+                    "type": "mongoose.Schema.Types.ObjectId", 
+                    "ref": "User", 
+                    "required": true 
+                  },
+                  "orderItems": [
+                    {
+                      "orderItemsId": {
+                           "type": "mongoose.Schema.Types.ObjectId", 
+                           "ref": "orderItem", 
+                           "required": true
+                           }
+                    }
+                  ],
+                  "shippingAddress":{
+                    "type":"String", 
+                    "required": true
+                  },
+                  "city":{
+                    "type":"String", 
+                    "required": true
+                  },
+                  "country":{
+                    "type":"String", 
+                    "required": true
+                  },
+                  "phone":{
+                    "type":"String", 
+                    "required": true
+                  },
+                  "transactionStatus": {
+                    "type": "String",
+                    "enum": "['pending', 'shipped', 'delivered']",
+                    "default": "pending"
+                  },
+                 
+                  "totalPrice": { 
+                    "type": "Number", 
+                    "required": true
+                   },
+                    "dateOrdered":{
+                    "type":"Date",
+                    "default":"Date.now"
+                  }
+                },
+                "required": [
+                    "buyerId",
+                    "orderItems",
+                    "orderItemsId",
+                    "shippingAddress",
+                    "city",
+                    "country",
+                    "phone",
+                    "transactionStatus",
+                    "totalPrice",
+                    "dateOrdered"
+
+                ]
+            }
+        }
+    }
+}
+
+            
+        
+        
