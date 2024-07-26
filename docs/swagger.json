@@ -787,89 +787,25 @@
         },
         "/api/agri-sales/products/addProduct": {
             "post": {
-                "summary": "Create a new Product",
-                "description": "add a Product",
+                "summary": "Create a new product",
+                "description": "Create a product to your account",
                 "tags": [
                     "Product"
                 ],
-                "consumes": [
-                    "multipart/form-data"
-                  ],
                 "parameters": [
                     {
-                        "in": "formData",
-                        "name": "farmerId",
-                       "type":"string",
-                        "required": true,
-                        "description": "Product object"
-                    },
-                    {
-                        "in": "formData",
-                        "name": "productName",
-                       "type":"string",
-                        "required": true,
-                        "description": "Product object"
-                    },
-                    {
-                        "in": "formData",
-                        "name": "description",
-                       "type":"string",
-                        "required": true,
-                        "description": "Product object"
-                    },
-                    {
-                        "in": "formData",
-                        "name": "image",
-                       "type":"file",
-                       "description": "Product object",
-                        "public_id": {
-                          "type": "String"
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions"
                         },
-                        "asset_id":{
-                          "type": "String"
-                        },
-                        "url":{
-                          "type": "String"
-                        }
-                      },
-                    {
-                        "in": "formData",
-                        "name": "price",
-                       "type":"number",
                         "required": true,
-                        "description": "Product object"
-                    },
-                    {
-                        "in": "formData",
-                        "name": "productInStock",
-                       "type":"number",
-                        "required": true,
-                        "description": "Product object"
-                    },
-                    {
-                        "in": "formData",
-                        "name": "category",
-                       "type":"string",
-                        "required": true,
-                        "description": "Product object"
-                    },
-                    {
-                        "in": "formData",
-                        "name": "updatedAt",
-                       "type":"string",
-                       "format": "date-time",
-                        "required": true,
-                        "default": "2024-05-30T12:34:56.789Z",
-                        "description": "Product object"
+                        "description": "product object"
                     }
-
                 ],
                 "responses": {
                     "201": {
-                        "description": " Product created"
-                    },
-                    "401":{
-                        "description":"Bad request -Validation error"
+                        "description": "product created"
                     }
                 }
             }
@@ -965,32 +901,6 @@
                     },
                     "404": {
                         "description": "category not found"
-                    }
-                }
-            }
-        },
-        "/api/agri-sales/products/productById/{id}": {
-            "get": {
-                "summary": "get a product by id",
-                "description": "get a single id by id",
-                "tags": [
-                    "Product"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id of the product to get",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "single id got it!"
-                    },
-                    "404": {
-                        "description": "id not found"
                     }
                 }
             }
@@ -1560,7 +1470,7 @@
                     "AgronomistId"
                 ]
             },
-        "Product": {
+        "Products": {
             "type": "object",
             "properties": {
                 "farmerId": {
