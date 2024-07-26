@@ -486,7 +486,7 @@
                         "in": "body",
                         "name": "body",
                         "schema": {
-                            "$ref": "#/definitions"
+                            "$ref": "#/definitions/components/Users"
                         },
                         "required": true,
                         "description": "signUp object"
@@ -1254,11 +1254,7 @@
         },
         "schemas": {
           "User": {
-            "firstName": {
-                "type": "String",
-                "required": true
-            },
-            "lastName": {
+            "fullName": {
                 "type": "String",
                 "required": true
             },
@@ -1400,34 +1396,31 @@
         "Users": {
             "type": "object",
             "properties": {
-                "fullNames": {
-                    "type": "String",
+                "fullName": {
+                    "type": "string",
                     "required": true
                 },
-                "Email": {
-                    "type": "String",
+                "email": {
+                    "type": "string",
                     "required": true
                 },
-                "Role": {
-                    "type": "String",
+                "password":{
+                    "type": "string",
                     "required": true
                 },
-                "contact": {
-                    "type": "String",
+
+                "role": {
+                    "type": "string",
                     "required": true
-                },
-                "address": {
-                    "type": "String",
-                    "required": true
-            
                 }
+             
             },
                 "required": [
                     "fullNames",
-                    "Email",
-                    "Role",
-                    "contact",
-                    "address"
+                    "email",
+                    "password",
+                    "role"
+
                 ]
             },
         "Disease": {
