@@ -9,6 +9,7 @@ import agronomistRouter from './agronomistSignUp.js';
 import cartRouter from './cartRoutes.js';
 import diseaseRouter from './Disease.js';
 import orderRouter from './orderRoutes.js';
+import routerM from './message.route.js';
 
 
 router.use('/products', productRouter)
@@ -20,6 +21,7 @@ router.use('/farmer',farmerRouter);
 router.use('/token',tokenRouter);
 router.use('/agro',agronomistRouter);
 router.use('/disease',diseaseRouter);
+router.use('/messages', routerM);
 
 
 export default router

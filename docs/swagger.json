@@ -1240,7 +1240,50 @@
                     }
                 }
             }
+        },
+        "/api/agri-sales/messages/Addmessages": {
+            "post": {
+                "summary": "Create a new message",  
+                "description": "Create a message",
+                "tags": [
+                    "Message"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/components/message"
+                        },
+                        "required": true,
+                        "description": "product object"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "product created"
+                    }
+                }
+            }
+        },
+        "/api/agri-sales/messages/Allmessages": {
+            "get": {
+                "summary": "Find all message",
+                "description": "Find all messages",
+                "tags": [
+                    "Message"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieved"
+                    },
+                    "404": {
+                        "description": "message not found"
+                    }
+                }
+            }
         }
+
     },
         
   "definitions": {
@@ -1555,6 +1598,25 @@
                     "totalPrice",
                     "createdAt"
                 ]
+            },
+       "message": {
+                "type": "string",
+                "required": ["name","email","message"],
+                "properties": {
+                    "name":{
+                        "type": "string",
+                        "required": true
+                    },
+                    "email":{
+                        "type": "string",
+                        "required": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+
             },
         "Order": {
             "type": "object",
