@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         required: true,
+        enum: ['Farmer', 'Buyer']
     },
     password: {
         type: String,
@@ -29,7 +30,7 @@ const userSchema = new mongoose.Schema({
     verified: {
         type: Boolean,
         required: true,
-        default: false
+        default: true
     }
 }, {
     timestamps: true 

@@ -10,27 +10,27 @@ async (req, res, next) =>{
   try {
     
 
-    const uploadImage = await cloudinary.uploader.upload(req.file.path, (err, uploadedImage) => {
-  if(err){
-    console.log(err.message);
-    return res.status(500).json({message: 'error'});
-  }
-})
+    // const uploadImage = await cloudinary.uploader.upload(req.file.path, (err, uploadedImage) => {
+  // if(err){
+  //   console.log(err.message);
+  //   return res.status(500).json({message: 'error'});
+  // }
+// })
 
-    const { productName, description, price, productInStock, category } = req.body;
+    const { productName, description, price, category } = req.body;
 
    
     const newProduct = new Product({
       productName,
       description,
       price,
-      productInStock,
+      // productInStock,
       category,
-      image: {
-        public_id: uploadImage.public_id,
-        asset_id: uploadImage.asset_id,
-        url: uploadImage.url
-      } 
+      // image: {
+      //   public_id: uploadImage.public_id,
+      //   asset_id: uploadImage.asset_id,
+      //   url: uploadImage.url
+      // } 
     });
 
     

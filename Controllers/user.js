@@ -155,6 +155,8 @@ const resetPassword = asyncWrapper(async (req,res,next) => {
         return next(new BadRequestError("Invalid or expired token."));
     }
 
+
+
     // Update user's password
     const foundUser = await userModel.findById(id);
     if (!foundUser) {
@@ -181,6 +183,16 @@ const deleteUser = asyncWrapper(async (req, res, next) => {
     }
     res.status(200).json({ message: 'User deleted' });
 });
+const getBuyers = asyncWrapper(async (req, res, next) => {
+    const buyers = await userModel.find({ role: 'buyer' });
+    if (!buyers || buyers.length === 0) {
+        return next(new NotFoundError("No buyers found"));
+    }
+    res.status(200).json({
+        message: "Buyers retrieved successfully",
+        buyers: buyers
+    });
+});
 
 
 const userControllers = {
@@ -189,6 +201,7 @@ const userControllers = {
     validateOtp,
     forgotPassword,
     resetPassword,
-    deleteUser
+    deleteUser,
+    getBuyers
 };
 export default userControllers;

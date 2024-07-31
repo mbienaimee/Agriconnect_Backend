@@ -1,15 +1,19 @@
 import nodemailer from 'nodemailer';
+
 const sendEmail = (recipient, subject, body) => {
     const transporter = nodemailer.createTransport({
         service: process.env.EMAIL_SERVICE,
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASSWORD
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
 
     const mailOptions = {
-        from: '"Agri-Sales" <kezagiselle776@gmail.com>',
+        from: '"Agri-Sales" <bienaimeemariereine@gmail.com>',
         to: recipient,
         subject: subject,
         text: body
@@ -23,4 +27,5 @@ const sendEmail = (recipient, subject, body) => {
         }
     });
 };
+
 export default sendEmail;

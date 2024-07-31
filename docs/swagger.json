@@ -626,6 +626,26 @@
                 }
             }
         },
+        "/api/agri-sales/users/client": {
+            "get": {
+                "summary": "Get all clients",
+                "description": "Get all clients",
+                "tags": [
+                    "User"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "All clients",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/components/Users"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/agri-sales/disease/addDisease": {
             "post": {
                 "summary": "Create a new Disease",
@@ -797,7 +817,7 @@
                         "in": "body",
                         "name": "body",
                         "schema": {
-                            "$ref": "#/definitions"
+                            "$ref": "#/definitions/components/Products"
                         },
                         "required": true,
                         "description": "product object"
@@ -931,7 +951,7 @@
                 }
             }
         },
-        "/api/agri-sales/products/deleteProduct/{id}": {
+        "/api/agri-sales/products/delete/{id}": {
             "delete": {
                 "summary": "Delete a product by ID",
                 "description": "Delete a product by ID",
@@ -1511,56 +1531,32 @@
         "Products": {
             "type": "object",
             "properties": {
-                "farmerId": {
-                    "type": "mongoose.Schema.Types.ObjectId",
-                    "ref": "User",
-                    "required": false
-                  },
                   "productName": {
-                    "type": "String",
+                    "type": "string",
                     "required": true
                   },
                   "description": {
-                    "type": "String",
+                    "type": "string",
                     "required": true
                   },
                   "price": {
-                    "type": "Number",
+                    "type": "number",
                     "required": true
                   },
-                  "productInStock":{
-                    "type":"Number",
-                    "required":true
-                },
+               
                   "category":{
-                    "type": "String",
+                    "type": "string",
                     "required":false,
                     "enums":"['Vegetables,Fruits']"
-                  },
-                  "image": {
-                    "public_id": {
-                      "type": "String"
-                    },
-                    "asset_id":{
-                      "type": "String"
-                    },
-                    "url":{
-                      "type": "String"
-                    }
-                  },
-                  "updatedAt": {
-                    "type": "Date",
-                    "default": "Date.now"
                   }
                 },
                 "required": [
-                    "farmerId",
+                 
                     "productName",
                     "description",
                     "price",
-                    "productInStock",
-                    "category",
-                    "image"
+                   
+                    "category"
                 ]
             },
         "Cart": {

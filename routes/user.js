@@ -10,5 +10,6 @@ userRouter.post('/verify',userControllers.validateOtp);
 userRouter.post('/forgotPassword',userControllers.forgotPassword);
 userRouter.post('/resetPassword',userControllers.resetPassword);
 userRouter.delete('/delete/:id',userControllers.deleteUser);
+userRouter.get('/client',userControllers.getBuyers)
 
 export default userRouter;
